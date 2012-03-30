@@ -31,12 +31,19 @@
       });
 
     })();
+
+    dojoConfig =  {
+        async: true
+    };
   </script>
 
   <script type="text/javascript">
       "##MODULES##"
       var define = cordova.define;
       var require = cordova.require;
+      // Make "remove" a no-op, AMD doesn't spec this function.
+      define.remove = function () {
+      }
   </script>
 
   <!-- TESTS -->
